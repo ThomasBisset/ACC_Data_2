@@ -23,7 +23,7 @@ def main():
                 "GripStatus": read_graphics()["trackGripStatus"],
                 "RainLevel": read_graphics()["rainIntensity"],
                 "WindSpeed": read_graphics()["windSpeed"],                      # unit: m/s
-                "WindDirection": read_graphics("windDirection"),                # unit: radians
+                "WindDirection": read_graphics()["windDirection"],              # unit: radians
                 # Tyre Info
                 "RainTyres": read_graphics()["rainTyres"],
                 "TyreTemperatureFrontLeft": read_physics()["tyreCoreTemperature"][0],       # unit: celsius
