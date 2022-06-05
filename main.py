@@ -1,59 +1,69 @@
 from time import sleep
 from read_shared_memory import read_graphics, read_physics, read_static
+from functions import create_csv, lap_time_error_handler
+import numpy as np
 
 
-def main():
-    if read_graphics()["ACC_STATUS"] == 1 or read_graphics()["ACC_STATUS"] == 2:
-        if read_graphics()["iSplit"] < 300:
-            stage_data = {
-                # Basic Info
-                "Track": read_static()["track"],
-                "Car": read_static()["carModel"],
-                "Session": read_graphics()["ACC_SESSION_TYPE"],
-                # Laps and Times
-                "CurrentSector": read_graphics()["currentSectorIndex"],
-                "LapsCompleted": read_graphics()["completedLaps"],
-                "BestLapTime": read_graphics()["iBestTime"],                    # unit: milliseconds
-                "LastLapTime": read_graphics()["iLastTime"],                    # unit: milliseconds
-                "LastSplitTime": read_graphics()["iSplit"],                     # unit: milliseconds
-                # Weather Info
-                "Clock": read_graphics()["Clock"],                              # unit: seconds from midnight
-                "AmbientTemperature": read_physics()["airTemp"],                # unit: celsius
-                "TrackTemperature": read_physics()["roadTemp"],                 # unit: celsius
-                "GripStatus": read_graphics()["trackGripStatus"],
-                "RainLevel": read_graphics()["rainIntensity"],
-                "WindSpeed": read_graphics()["windSpeed"],                      # unit: m/s
-                "WindDirection": read_graphics()["windDirection"],              # unit: radians
-                # Tyre Info
-                "RainTyres": read_graphics()["rainTyres"],
-                "TyreTemperatureFrontLeft": read_physics()["tyreCoreTemperature"][0],       # unit: celsius
-                "TyreTemperatureFrontRight": read_physics()["tyreCoreTemperature"][1],      # unit: celsius
-                "TyreTemperatureRearLeft": read_physics()["tyreCoreTemperature"][2],        # unit: celsius
-                "TyreTemperatureRearRight": read_physics()["tyreCoreTemperature"][3],       # unit: celsius
-                "TyrePressureFrontLeft": read_physics()["wheelPressure"][0],                # unit: psi
-                "TyrePressureFrontRight": read_physics()["wheelPressure"][1],               # unit: psi
-                "TyrePressureRearLeft": read_physics()["wheelPressure"][2],                 # unit: psi
-                "TyrePressureRearRight": read_physics()["wheelPressure"][3],                # unit: psi
-                # Electronics Settings Info
-                "TractionControl": read_graphics()["TC"],
-                "TractionControlCut": read_graphics()["TCCut"],
-                "ABS": read_graphics()["ABS"],
-                "BrakeBalance": read_physics()["brakeBias"],
-                "EngineMap": read_graphics()["EngineMap"],
-                # Fuel Data
-                "CurrentFuel": read_physics()["fuel"],                          # unit: litres
-                "UsedFuel": read_graphics()["usedFuel"],                        # unit: litres
-                "FuelPerLap": read_graphics()["fuelXLap"],                      # unit: litres per lap
-                "EstimatedFuelLaps": read_graphics()["fuelEstimatedLaps"],
-            }
-    return stage_data
+def data_collection():
+    data = {
+        # Basic Info
+        "Track": read_static()["track"],
+        "Car": read_static()["carModel"],
+        "Session": read_graphics()["ACC_SESSION_TYPE"],
+        # Laps and Times
+        "CurrentSector": read_graphics()["currentSectorIndex"],
+        "LapsCompleted": read_graphics()["completedLaps"],
+        "BestLapTime": lap_time_error_handler(read_graphics()["iBestTime"]),                # unit: milliseconds
+        "LastLapTime": lap_time_error_handler(read_graphics()["iLastTime"]),                # unit: milliseconds
+        "LastSplitTime": read_graphics()["iSplit"],                                         # unit: milliseconds
+        # Weather Info
+        "Clock": read_graphics()["Clock"],                                                  # unit: seconds from 00:00
+        "AmbientTemperature": round(read_physics()["airTemp"], 3),                          # unit: celsius
+        "TrackTemperature": round(read_physics()["roadTemp"], 3),                           # unit: celsius
+        "GripStatus": read_graphics()["trackGripStatus"],
+        "RainLevel": read_graphics()["rainIntensity"],
+        "WindSpeed": round(read_graphics()["windSpeed"], 3),                                # unit: m/s
+        "WindDirection": round(read_graphics()["windDirection"], 3),                        # unit: radians
+        # Tyre Info
+        "RainTyres": read_graphics()["rainTyres"],
+        "TyreTemperatureFrontLeft": round(read_physics()["tyreCoreTemperature"][0], 3),     # unit: celsius
+        "TyreTemperatureFrontRight": round(read_physics()["tyreCoreTemperature"][1], 3),    # unit: celsius
+        "TyreTemperatureRearLeft": round(read_physics()["tyreCoreTemperature"][2], 3),      # unit: celsius
+        "TyreTemperatureRearRight": round(read_physics()["tyreCoreTemperature"][3], 3),     # unit: celsius
+        "TyrePressureFrontLeft": round(read_physics()["wheelPressure"][0], 3),              # unit: psi
+        "TyrePressureFrontRight": round(read_physics()["wheelPressure"][1], 3),             # unit: psi
+        "TyrePressureRearLeft": round(read_physics()["wheelPressure"][2], 3),               # unit: psi
+        "TyrePressureRearRight": round(read_physics()["wheelPressure"][3], 3),              # unit: psi
+        # Electronics Settings Info
+        "TractionControl": read_graphics()["TC"],
+        "TractionControlCut": read_graphics()["TCCut"],
+        "ABS": read_graphics()["ABS"],
+        "BrakeBalance": round(read_physics()["brakeBias"], 3),
+        "EngineMap": read_graphics()["EngineMap"],
+        # Fuel Data
+        "CurrentFuel": round(read_physics()["fuel"], 3),                                    # unit: litres
+        "UsedFuel": round(read_graphics()["usedFuel"], 3),                                  # unit: litres
+        "FuelPerLap": round(read_graphics()["fuelXLap"], 3),                                # unit: litres per lap
+        "EstimatedFuelLaps": round(read_graphics()["fuelEstimatedLaps"], 3),
+    }
+    return data
+
+
+def live_data():
+    print(".", end="")
 
 
 if __name__ == '__main__':
+    output_data = []
     try:
         print("Starting")
         while True:
-            main()
-            sleep(0.5)
+            if read_graphics()["ACC_STATUS"] == 2 and 250 < read_graphics()["iSplit"] < 500:
+                output_data.append(data_collection())
+                sleep(0.5)
+            live_data()
+
     except KeyboardInterrupt:
-        print("Exiting")
+        print("Stopping")
+        create_csv(output_data)
+        print("Writing " + np.array(output_data).size + " rows to CSV file")

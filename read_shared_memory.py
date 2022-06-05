@@ -88,7 +88,7 @@ class SPageFileStatic(Structure):
             "kersMaxJ": self.kersMaxJ,                                                              # not used by ACC
             "engineBrakeSettingsCount": self.engineBrakeSettingsCount,                              # not used by ACC
             "ersPowerControllerCount": self.ersPowerControllerCount,                                # not used by ACC
-            "trackSPlineLength": self.trackSPlineLength,                                            # not used by ACC
+            "trackSplineLength": self.trackSplineLength,                                            # not used by ACC
             "trackConfiguration": self.trackConfiguration,                                          # not used by ACC
             "ersMaxJ": self.ersMaxJ,                                                                # not used by ACC
             "isTimedRace": self.isTimedRace,                                                        # not used by ACC

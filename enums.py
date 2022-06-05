@@ -180,3 +180,21 @@ def track_name(enum):
         "snetterton": "Snetterton"
     }
     return track[enum]
+
+
+def car_class(car):
+    match car:
+        case "porsche_992_gt3_cup", "porsche_991ii_gt3_cup":
+            return "CUP"
+        case "lamborghini_huracan_st_evo2", "lamborghini_huracan_st":
+            return "ST"
+        case "ferrari_488_challenge_evo":
+            return "CHL"
+        case "bmw_m2_cs_racing":
+            return "TCX"
+        case "alpine_a110_gt4", "amr_v8_vantage_gt4", "audi_r8_gt4", "bmw_m4_gt4", "chevrolet_camaro_gt4r", \
+             "ginetta_g55_gt4", "ktm_xbow_gt4", "maserati_mc_gt4", "mclaren_570s_gt4", "mercedes_amg_gt4", \
+             "porsche_718_cayman_gt4_mr":
+            return "GT4"
+        case _:
+            return "GT3"
