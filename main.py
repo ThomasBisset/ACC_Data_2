@@ -2,7 +2,6 @@ from time import sleep
 from read_shared_memory import read_graphics
 from functions import create_csv
 from data_collection import data_collection
-import numpy as np
 
 
 if __name__ == '__main__':
@@ -17,4 +16,3 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("Stopping")
         create_csv(output_data)
-        print("Writing " + str(np.array(output_data).size) + " rows to CSV file")

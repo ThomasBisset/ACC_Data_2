@@ -1,5 +1,6 @@
 import time
 import pandas as pd
+import numpy as np
 
 
 def seconds_from_midnight(input_secs):
@@ -20,3 +21,4 @@ def lap_time_error_handler(lap_time):
 def create_csv(data):
     filename = time.strftime("%Y-%m-%d-%H-%M-%S") + ".csv"
     pd.DataFrame(data).to_csv(filename)
+    print("Writing " + str(np.array(data).size) + " rows to CSV file")
