@@ -1,18 +1,17 @@
 from time import sleep
-from read_shared_memory import read_graphics
 from functions import create_csv
 from data_collection import data_collection
 
 
 if __name__ == '__main__':
     output_data = []
+    polling_rate = 1        # in Hz
     try:
         print("Starting")
         while True:
-            if read_graphics()["ACC_STATUS"] == 2 and 250 < read_graphics()["iSplit"] < 500:
-                output_data.append(data_collection())
-                sleep(0.5)
-
+            output_data.append(data_collection())
+            sleep(1 / polling_rate)
     except KeyboardInterrupt:
         print("Stopping")
         create_csv(output_data)
+    

@@ -177,7 +177,10 @@ def track_name(enum):
         "imola": "Imola",
         "oulton_park": "Oulton Park",
         "donington": "Donnington",
-        "snetterton": "Snetterton"
+        "snetterton": "Snetterton",
+        "cota": "Circuit of the Americas",
+        "indianapolis": "Indianapolis",
+        "watkins_glen": "Watkins Glen"
     }
     return track[enum]
 

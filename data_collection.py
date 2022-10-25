@@ -8,12 +8,17 @@ def data_collection():
         "Track": read_static()["track"],
         "Car": read_static()["carModel"],
         "Session": read_graphics()["ACC_SESSION_TYPE"],
+        "Flag": read_graphics()["flag"],
+        "Penalty": read_graphics()["penalty"],
+        "InPit": read_graphics()["isInPit"],
+        "InPitLane": read_graphics()["isInPitLane"],
         # Laps and Times
         "CurrentSector": read_graphics()["currentSectorIndex"],
         "LapsCompleted": read_graphics()["completedLaps"],
         "BestLapTime": lap_time_error_handler(read_graphics()["iBestTime"]),                # unit: milliseconds
         "LastLapTime": lap_time_error_handler(read_graphics()["iLastTime"]),                # unit: milliseconds
         "LastSplitTime": read_graphics()["iSplit"],                                         # unit: milliseconds
+        "TrackPosition": read_graphics()["normalizedCarPosition"],
         # Weather Info
         "Clock": read_graphics()["Clock"],                                                  # unit: seconds from 00:00
         "AmbientTemperature": round(read_physics()["airTemp"], 3),                          # unit: celsius
@@ -35,9 +40,16 @@ def data_collection():
         # Electronics Settings Info
         "TractionControl": read_graphics()["TC"],
         "TractionControlCut": read_graphics()["TCCut"],
-        "ABS": read_graphics()["ABS"],
-        "BrakeBalance": round(read_physics()["brakeBias"], 3),
         "EngineMap": read_graphics()["EngineMap"],
+        # Brakes Data
+        "BrakeTemperatureFrontLeft": round(read_physics()["brakeTemp"][0], 3),              # unit: celsius
+        "BrakeTemperatureFrontRight": round(read_physics()["brakeTemp"][0], 3),             # unit: celsius
+        "BrakeTemperatureRearLeft": round(read_physics()["brakeTemp"][0], 3),               # unit: celsius
+        "BrakeTemperatureRearRight": round(read_physics()["brakeTemp"][0], 3),              # unit: celsius
+        "BrakeBalance": round(read_physics()["brakeBias"], 3),
+        "ABS": read_graphics()["ABS"],
+        "FrontBrakeCompound": read_physics()["frontBrakeCompound"],
+        "RearBrakeCompound": read_physics()["rearBrakeCompound"],
         # Fuel Data
         "CurrentFuel": round(read_physics()["fuel"], 3),                                    # unit: litres
         "UsedFuel": round(read_graphics()["usedFuel"], 3),                                  # unit: litres

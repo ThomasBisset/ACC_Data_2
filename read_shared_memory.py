@@ -1,4 +1,5 @@
 # up to date as of v1.8.12
+# Code based on the work of dabde: https://github.com/dabde
 
 from ctypes import Structure, sizeof, c_float, c_wchar, c_int
 import mmap
