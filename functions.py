@@ -22,3 +22,7 @@ def create_csv(data):
     filename = "Data-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".csv"
     pd.DataFrame(data).to_csv(filename)
     print("Writing " + str(np.array(data).size) + " rows to CSV file")
+
+
+def data_cleaning():    # function to automatically remove extraneous rows from dataframe
+    return
