@@ -5,9 +5,9 @@ from data_collection import data_collection
 
 if __name__ == '__main__':
     output_data = []
-    polling_rate = 1        # in Hz
+    polling_rate = 1    # Hz
     try:
-        print("Starting")
+        print("Started, press Ctrl+C to stop execution")
         while True:
             output_data.append(data_collection())
             sleep(1 / polling_rate)

@@ -1,28 +1,20 @@
+import datetime
 import time
 import pandas as pd
-import numpy as np
 
 
-def seconds_from_midnight(input_secs):
-    hours = int(input_secs / 60 / 60)
-    minutes = int(input_secs / 60 % 60)
-    seconds = int(input_secs % 60)
-    output_time = str(hours) + ":" + str(minutes) + ":" + str(seconds)
-    return output_time
-
-
-def lap_time_error_handler(lap_time):
-    if lap_time == 2147483647:
+def lap_time_converter(milliseconds):
+    if milliseconds == 2147483647:
         return "NULL"
     else:
-        return lap_time
+        secs = milliseconds / 1000
+        output_time = datetime.timedelta(seconds=secs)
+        return output_time
 
 
-def create_csv(data):
-    filename = "Data-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".csv"
-    pd.DataFrame(data).to_csv(filename)
-    print("Writing " + str(np.array(data).size) + " rows to CSV file")
-
-
-def data_cleaning():    # function to automatically remove extraneous rows from dataframe
-    return
+def create_csv(input_df):
+    filename = "ACC-Data-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".csv"
+    df = pd.DataFrame(input_df)
+    cleaned_df = df[df["SessionStatus"] == 2]
+    pd.DataFrame(cleaned_df).to_csv(filename)
+    print("Writing to CSV file - " + filename)
