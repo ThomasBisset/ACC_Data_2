@@ -1,4 +1,5 @@
 # up to date as of v1.8.12
+# Code based on the work of dabde: https://github.com/dabde
 
 from ctypes import Structure, sizeof, c_float, c_wchar, c_int
 import mmap
@@ -52,6 +53,7 @@ class SPageFileStatic(Structure):
         ("dryTyresName", c_wchar * 33),
         ("wetTyresName", c_wchar * 33),
     ]
+
 
     def todict(self):
         return {

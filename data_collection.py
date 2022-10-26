@@ -1,5 +1,7 @@
+import datetime
+from enums import car_class
+from functions import lap_time_converter
 from read_shared_memory import read_graphics, read_physics, read_static
-from functions import lap_time_error_handler
 
 
 def data_collection():
@@ -7,15 +9,22 @@ def data_collection():
         # Basic Info
         "Track": read_static()["track"],
         "Car": read_static()["carModel"],
+        "CarClass": car_class(read_static()["carModel"]).lower(),
         "Session": read_graphics()["ACC_SESSION_TYPE"],
+        "SessionStatus": read_graphics()["ACC_STATUS"],
+        "Flag": read_graphics()["flag"],
+        "Penalty": read_graphics()["penalty"],
+        "InPit": read_graphics()["isInPit"],
+        "InPitLane": read_graphics()["isInPitLane"],
         # Laps and Times
         "CurrentSector": read_graphics()["currentSectorIndex"],
         "LapsCompleted": read_graphics()["completedLaps"],
-        "BestLapTime": lap_time_error_handler(read_graphics()["iBestTime"]),                # unit: milliseconds
-        "LastLapTime": lap_time_error_handler(read_graphics()["iLastTime"]),                # unit: milliseconds
-        "LastSplitTime": read_graphics()["iSplit"],                                         # unit: milliseconds
+        "BestLapTime": lap_time_converter(read_graphics()["iBestTime"]),
+        "LastLapTime": lap_time_converter(read_graphics()["iLastTime"]),
+        "LastSplitTime": lap_time_converter(read_graphics()["iSplit"]),
+        "TrackPosition": read_graphics()["normalizedCarPosition"],
         # Weather Info
-        "Clock": read_graphics()["Clock"],                                                  # unit: seconds from 00:00
+        "Clock": datetime.timedelta(seconds=read_graphics()["Clock"]),
         "AmbientTemperature": round(read_physics()["airTemp"], 3),                          # unit: celsius
         "TrackTemperature": round(read_physics()["roadTemp"], 3),                           # unit: celsius
         "GripStatus": read_graphics()["trackGripStatus"],
@@ -35,13 +44,20 @@ def data_collection():
         # Electronics Settings Info
         "TractionControl": read_graphics()["TC"],
         "TractionControlCut": read_graphics()["TCCut"],
-        "ABS": read_graphics()["ABS"],
-        "BrakeBalance": round(read_physics()["brakeBias"], 3),
         "EngineMap": read_graphics()["EngineMap"],
+        # Brakes Data
+        "BrakeTemperatureFrontLeft": round(read_physics()["brakeTemp"][0], 3),              # unit: celsius
+        "BrakeTemperatureFrontRight": round(read_physics()["brakeTemp"][0], 3),             # unit: celsius
+        "BrakeTemperatureRearLeft": round(read_physics()["brakeTemp"][0], 3),               # unit: celsius
+        "BrakeTemperatureRearRight": round(read_physics()["brakeTemp"][0], 3),              # unit: celsius
+        "BrakeBalance": round(read_physics()["brakeBias"], 3),
+        "ABS": read_graphics()["ABS"],
+        "FrontBrakeCompound": read_physics()["frontBrakeCompound"],
+        "RearBrakeCompound": read_physics()["rearBrakeCompound"],
         # Fuel Data
         "CurrentFuel": round(read_physics()["fuel"], 3),                                    # unit: litres
         "UsedFuel": round(read_graphics()["usedFuel"], 3),                                  # unit: litres
-        "FuelPerLap": round(read_graphics()["fuelXLap"], 3),                                # unit: litres per lap
+        "FuelPerLap": round(read_graphics()["fuelXLap"], 3),                                # unit: litres / lap
         "EstimatedFuelLaps": round(read_graphics()["fuelEstimatedLaps"], 3),
     }
     return data

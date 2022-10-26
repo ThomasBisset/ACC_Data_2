@@ -152,7 +152,7 @@ def car_model(enum):
         "bmw_m2_cs_racing": "BMW M2 Cup 2020",
         "ferrari_488_challenge_evo": "Ferrari 488 Challenge Evo 2020",
         "lamborghini_huracan_st_evo2": "Lamborghini Huracan ST Evo2 2021",
-        "porsche_992_gt3_cup": "Porsche 992 GT3 Cup 2021"
+        "porsche_992_gt3_cup": "Porsche 992 GT3 Cup 2021",
     }
     return car[enum]
 
@@ -167,17 +167,20 @@ def track_name(enum):
         "misano": "Misano",
         "monza": "Monza",
         "mount_panorama": "Mount Panorama",
-        "nurburgring": "Nurburgring",
+        "nurburgring": "Nürburgring",
         "paul_ricard": "Paul Ricard",
         "silverstone": "Silverstone",
-        "spa": "Spa Francochamps",
+        "spa": "Spa-Francorchamps",
         "suzuka": "Suzuka",
         "zolder": "Zolder",
         "zandvoort": "Zandvoort",
         "imola": "Imola",
         "oulton_park": "Oulton Park",
-        "donington": "Donnington",
-        "snetterton": "Snetterton"
+        "donnington": "Donnington",
+        "snetterton": "Snetterton",
+        "cota": "Circuit of the Americas",
+        "indianapolis": "Indianapolis",
+        "watkins_glen": "Watkins Glen",
     }
     return track[enum]
 
