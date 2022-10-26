@@ -54,7 +54,6 @@ class SPageFileStatic(Structure):
         ("wetTyresName", c_wchar * 33),
     ]
 
-    # TODO: Wind direction, need to work out how this works? Values don't seem to make sense
 
     def todict(self):
         return {
