@@ -25,39 +25,39 @@ def data_collection():
         "TrackPosition": read_graphics()["normalizedCarPosition"],
         # Weather Info
         "Clock": datetime.timedelta(seconds=read_graphics()["Clock"]),
-        "AmbientTemperature": round(read_physics()["airTemp"], 3),                          # unit: celsius
-        "TrackTemperature": round(read_physics()["roadTemp"], 3),                           # unit: celsius
+        "AmbientTemperature": round(read_physics()["airTemp"], 3),                         # unit: c
+        "TrackTemperature": round(read_physics()["roadTemp"], 3),                          # unit: c
         "GripStatus": read_graphics()["trackGripStatus"],
         "RainLevel": read_graphics()["rainIntensity"],
-        "WindSpeed": round(read_graphics()["windSpeed"], 3),                                # unit: m/s
-        "WindDirection": round(read_graphics()["windDirection"], 3),                        # unit: radians
+        "WindSpeed": round(read_graphics()["windSpeed"], 3),                             # unit: m/s
+        "WindDirection": round(read_graphics()["windDirection"], 3),                 # unit: radians
         # Tyre Info
         "RainTyres": read_graphics()["rainTyres"],
-        "TyreTemperatureFrontLeft": round(read_physics()["tyreCoreTemperature"][0], 3),     # unit: celsius
-        "TyreTemperatureFrontRight": round(read_physics()["tyreCoreTemperature"][1], 3),    # unit: celsius
-        "TyreTemperatureRearLeft": round(read_physics()["tyreCoreTemperature"][2], 3),      # unit: celsius
-        "TyreTemperatureRearRight": round(read_physics()["tyreCoreTemperature"][3], 3),     # unit: celsius
-        "TyrePressureFrontLeft": round(read_physics()["wheelPressure"][0], 3),              # unit: psi
-        "TyrePressureFrontRight": round(read_physics()["wheelPressure"][1], 3),             # unit: psi
-        "TyrePressureRearLeft": round(read_physics()["wheelPressure"][2], 3),               # unit: psi
-        "TyrePressureRearRight": round(read_physics()["wheelPressure"][3], 3),              # unit: psi
+        "TyreTemperatureFrontLeft": round(read_physics()["tyreCoreTemperature"][0], 3),    # unit: c
+        "TyreTemperatureFrontRight": round(read_physics()["tyreCoreTemperature"][1], 3),   # unit: c
+        "TyreTemperatureRearLeft": round(read_physics()["tyreCoreTemperature"][2], 3),     # unit: c
+        "TyreTemperatureRearRight": round(read_physics()["tyreCoreTemperature"][3], 3),    # unit: c
+        "TyrePressureFrontLeft": round(read_physics()["wheelPressure"][0], 3),           # unit: psi
+        "TyrePressureFrontRight": round(read_physics()["wheelPressure"][1], 3),          # unit: psi
+        "TyrePressureRearLeft": round(read_physics()["wheelPressure"][2], 3),            # unit: psi
+        "TyrePressureRearRight": round(read_physics()["wheelPressure"][3], 3),           # unit: psi
         # Electronics Settings Info
         "TractionControl": read_graphics()["TC"],
         "TractionControlCut": read_graphics()["TCCut"],
         "EngineMap": read_graphics()["EngineMap"],
         # Brakes Data
-        "BrakeTemperatureFrontLeft": round(read_physics()["brakeTemp"][0], 3),              # unit: celsius
-        "BrakeTemperatureFrontRight": round(read_physics()["brakeTemp"][0], 3),             # unit: celsius
-        "BrakeTemperatureRearLeft": round(read_physics()["brakeTemp"][0], 3),               # unit: celsius
-        "BrakeTemperatureRearRight": round(read_physics()["brakeTemp"][0], 3),              # unit: celsius
+        "BrakeTemperatureFrontLeft": round(read_physics()["brakeTemp"][0], 3),       # unit: celsius
+        "BrakeTemperatureFrontRight": round(read_physics()["brakeTemp"][0], 3),      # unit: celsius
+        "BrakeTemperatureRearLeft": round(read_physics()["brakeTemp"][0], 3),        # unit: celsius
+        "BrakeTemperatureRearRight": round(read_physics()["brakeTemp"][0], 3),       # unit: celsius
         "BrakeBalance": round(read_physics()["brakeBias"], 3),
         "ABS": read_graphics()["ABS"],
         "FrontBrakeCompound": read_physics()["frontBrakeCompound"],
         "RearBrakeCompound": read_physics()["rearBrakeCompound"],
         # Fuel Data
-        "CurrentFuel": round(read_physics()["fuel"], 3),                                    # unit: litres
-        "UsedFuel": round(read_graphics()["usedFuel"], 3),                                  # unit: litres
-        "FuelPerLap": round(read_graphics()["fuelXLap"], 3),                                # unit: litres / lap
+        "CurrentFuel": round(read_physics()["fuel"], 3),                              # unit: litres
+        "UsedFuel": round(read_graphics()["usedFuel"], 3),                            # unit: litres
+        "FuelPerLap": round(read_graphics()["fuelXLap"], 3),                    # unit: litres / lap
         "EstimatedFuelLaps": round(read_graphics()["fuelEstimatedLaps"], 3),
     }
     return data

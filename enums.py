@@ -195,9 +195,9 @@ def car_class(car):
             return "CHL"
         case "bmw_m2_cs_racing":
             return "TCX"
-        case "alpine_a110_gt4", "amr_v8_vantage_gt4", "audi_r8_gt4", "bmw_m4_gt4", "chevrolet_camaro_gt4r", \
-             "ginetta_g55_gt4", "ktm_xbow_gt4", "maserati_mc_gt4", "mclaren_570s_gt4", "mercedes_amg_gt4", \
-             "porsche_718_cayman_gt4_mr":
+        case "alpine_a110_gt4", "amr_v8_vantage_gt4", "audi_r8_gt4", "bmw_m4_gt4", \
+             "chevrolet_camaro_gt4r", "ginetta_g55_gt4", "ktm_xbow_gt4", "maserati_mc_gt4", \
+             "mclaren_570s_gt4", "mercedes_amg_gt4", "porsche_718_cayman_gt4_mr":
             return "GT4"
         case _:
             return "GT3"
