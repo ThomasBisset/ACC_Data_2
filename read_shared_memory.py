@@ -17,15 +17,15 @@ class SPageFileStatic(Structure):
         ("playerSurname", c_wchar * 33),
         ("playerNick", c_wchar * 33),
         ("sectorCount", c_int),
-        ("maxTorque", c_float),                                                                     # not used by ACC
-        ("maxPower", c_float),                                                                      # not used by ACC
+        ("maxTorque", c_float),                                                    # not used by ACC
+        ("maxPower", c_float),                                                     # not used by ACC
         ("maxRpm", c_int),
         ("maxFuel", c_float),
-        ("suspensionMaxTravel", c_float * 4),                                                       # not used by ACC
-        ("tyreRadius", c_float * 4),                                                                # not used by ACC
-        ("maxTurboBoost", c_float * 4),                                                             # not used by ACC
-        ("deprecated_1", c_float),                                                                  # not used by ACC
-        ("deprecated_2", c_float),                                                                  # not used by ACC
+        ("suspensionMaxTravel", c_float * 4),                                      # not used by ACC
+        ("tyreRadius", c_float * 4),                                               # not used by ACC
+        ("maxTurboBoost", c_float * 4),                                            # not used by ACC
+        ("deprecated_1", c_float),                                                 # not used by ACC
+        ("deprecated_2", c_float),                                                 # not used by ACC
         ("penaltiesEnabled", c_int),
         ("aidFuelRate", c_float),
         ("aidTireRate", c_float),
@@ -34,19 +34,19 @@ class SPageFileStatic(Structure):
         ("aidStability", c_float),
         ("aidAutoClutch", c_int),
         ("aidAutoBlip", c_int),
-        ("hasDRS", c_int),                                                                          # not used by ACC
-        ("hasERS", c_int),                                                                          # not used by ACC
-        ("hasKERS", c_int),                                                                         # not used by ACC
-        ("kersMaxJ", c_float),                                                                      # not used by ACC
-        ("engineBrakeSettingsCount", c_int),                                                        # not used by ACC
-        ("ersPowerControllerCount", c_int),                                                         # not used by ACC
-        ("trackSplineLength", c_float),                                                             # not used by ACC
-        ("trackConfiguration", c_wchar * 33),                                                       # not used by ACC
-        ("ersMaxJ", c_float),                                                                       # not used by ACC
-        ("isTimedRace", c_int),                                                                     # not used by ACC
-        ("hasExtraLap", c_int),                                                                     # not used by ACC
-        ("carSkin", c_wchar * 33),                                                                  # not used by ACC
-        ("reversedGridPositions", c_int),                                                           # not used by ACC
+        ("hasDRS", c_int),                                                         # not used by ACC
+        ("hasERS", c_int),                                                         # not used by ACC
+        ("hasKERS", c_int),                                                        # not used by ACC
+        ("kersMaxJ", c_float),                                                     # not used by ACC
+        ("engineBrakeSettingsCount", c_int),                                       # not used by ACC
+        ("ersPowerControllerCount", c_int),                                        # not used by ACC
+        ("trackSplineLength", c_float),                                            # not used by ACC
+        ("trackConfiguration", c_wchar * 33),                                      # not used by ACC
+        ("ersMaxJ", c_float),                                                      # not used by ACC
+        ("isTimedRace", c_int),                                                    # not used by ACC
+        ("hasExtraLap", c_int),                                                    # not used by ACC
+        ("carSkin", c_wchar * 33),                                                 # not used by ACC
+        ("reversedGridPositions", c_int),                                          # not used by ACC
         ("PitWindowStart", c_int),
         ("PitWindowEnd", c_int),
         ("isOnline", c_int),
@@ -67,15 +67,15 @@ class SPageFileStatic(Structure):
             "playerSurname": self.playerSurname,
             "playerNick": self.playerNick,
             "sectorCount": self.sectorCount,
-            "maxTorque": self.maxTorque,                                                            # not used by ACC
-            "maxPower": self.maxPower,                                                              # not used by ACC
+            "maxTorque": self.maxTorque,                                           # not used by ACC
+            "maxPower": self.maxPower,                                             # not used by ACC
             "maxRpm": self.maxRpm,
             "maxFuel": self.maxFuel,
-            "suspensionMaxTravel": self.suspensionMaxTravel,                                        # not used by ACC
-            "tyreRadius": self.tyreRadius,                                                          # not used by ACC
-            "maxTurboBoost": self.maxTurboBoost,                                                    # not used by ACC
-            "deprecated_1": self.deprecated_1,                                                      # not used by ACC
-            "deprecated_2": self.deprecated_2,                                                      # not used by ACC
+            "suspensionMaxTravel": self.suspensionMaxTravel,                       # not used by ACC
+            "tyreRadius": self.tyreRadius,                                         # not used by ACC
+            "maxTurboBoost": self.maxTurboBoost,                                   # not used by ACC
+            "deprecated_1": self.deprecated_1,                                     # not used by ACC
+            "deprecated_2": self.deprecated_2,                                     # not used by ACC
             "penaltiesEnabled": self.penaltiesEnabled,
             "aidFuelRate": self.aidFuelRate,
             "aidTireRate": self.aidTireRate,
@@ -84,19 +84,19 @@ class SPageFileStatic(Structure):
             "aidStability": self.aidStability,
             "aidAutoClutch": self.aidAutoClutch,
             "aidAutoBlip": self.aidAutoBlip,
-            "hasDRS": self.hasDRS,                                                                  # not used by ACC
-            "hasERS": self.hasERS,                                                                  # not used by ACC
-            "hasKERS": self.hasKERS,                                                                # not used by ACC
-            "kersMaxJ": self.kersMaxJ,                                                              # not used by ACC
-            "engineBrakeSettingsCount": self.engineBrakeSettingsCount,                              # not used by ACC
-            "ersPowerControllerCount": self.ersPowerControllerCount,                                # not used by ACC
-            "trackSplineLength": self.trackSplineLength,                                            # not used by ACC
-            "trackConfiguration": self.trackConfiguration,                                          # not used by ACC
-            "ersMaxJ": self.ersMaxJ,                                                                # not used by ACC
-            "isTimedRace": self.isTimedRace,                                                        # not used by ACC
-            "hasExtraLap": self.hasExtraLap,                                                        # not used by ACC
-            "carSkin": self.carSkin,                                                                # not used by ACC
-            "reversedGridPositions": self.reversedGridPositions,                                    # not used by ACC
+            "hasDRS": self.hasDRS,                                                 # not used by ACC
+            "hasERS": self.hasERS,                                                 # not used by ACC
+            "hasKERS": self.hasKERS,                                               # not used by ACC
+            "kersMaxJ": self.kersMaxJ,                                             # not used by ACC
+            "engineBrakeSettingsCount": self.engineBrakeSettingsCount,             # not used by ACC
+            "ersPowerControllerCount": self.ersPowerControllerCount,               # not used by ACC
+            "trackSplineLength": self.trackSplineLength,                           # not used by ACC
+            "trackConfiguration": self.trackConfiguration,                         # not used by ACC
+            "ersMaxJ": self.ersMaxJ,                                               # not used by ACC
+            "isTimedRace": self.isTimedRace,                                       # not used by ACC
+            "hasExtraLap": self.hasExtraLap,                                       # not used by ACC
+            "carSkin": self.carSkin,                                               # not used by ACC
+            "reversedGridPositions": self.reversedGridPositions,                   # not used by ACC
             "PitWindowStart": self.PitWindowStart,
             "PitWindowEnd": self.PitWindowEnd,
             "isOnline": self.isOnline,
@@ -126,7 +126,7 @@ class SPageFileGraphic(Structure):
         ("lastSectorTime", c_int),
         ("numberOfLaps", c_int),
         ("tyreCompound", c_wchar * 33),
-        ("replayTimeMultiplier", c_float),                                                          # not used by ACC
+        ("replayTimeMultiplier", c_float),                                         # not used by ACC
         ("normalizedCarPosition", c_float),
         ("activeCars", c_int),
         ("carCoordinates", c_float * 60 * 3),
@@ -217,7 +217,7 @@ class SPageFileGraphic(Structure):
             "lastSectorTime": self.lastSectorTime,
             "numberOfLaps": self.numberOfLaps,
             "tyreCompound": self.tyreCompound,
-            "replayTimeMultiplier": self.replayTimeMultiplier,                                      # not used by ACC
+            "replayTimeMultiplier": self.replayTimeMultiplier,                     # not used by ACC
             "normalizedCarPosition": self.normalizedCarPosition,
             "activeCars": self.activeCars,
             "carCoordinates": self.carCoordinates,
@@ -301,67 +301,67 @@ class SPageFilePhysics(Structure):
         ("velocity", c_float * 3),
         ("accG", c_float * 3),
         ("wheelSlip", c_float * 4),
-        ("wheelLoad", c_float * 4),                                                                 # not used by ACC
+        ("wheelLoad", c_float * 4),                                                # not used by ACC
         ("wheelPressure", c_float * 4),
         ("wheelAngularSpeed", c_float * 4),
-        ("tyreWear", c_float * 4),                                                                  # not used by ACC
-        ("tyreDirtyLevel", c_float * 4),                                                            # not used by ACC
+        ("tyreWear", c_float * 4),                                                 # not used by ACC
+        ("tyreDirtyLevel", c_float * 4),                                           # not used by ACC
         ("tyreCoreTemperature", c_float * 4),
-        ("camberRAD", c_float * 4),                                                                 # not used by ACC
+        ("camberRAD", c_float * 4),                                                # not used by ACC
         ("suspensionTravel", c_float * 4),
-        ("drs", c_float),                                                                           # not used by ACC
+        ("drs", c_float),                                                          # not used by ACC
         ("tc", c_float),
         ("heading", c_float),
         ("pitch", c_float),
         ("roll", c_float),
-        ("cgHeight", c_float),                                                                      # not used by ACC
+        ("cgHeight", c_float),                                                     # not used by ACC
         ("carDamage", c_float * 5),
-        ("numberOfTyresOut", c_int),                                                                # not used by ACC
+        ("numberOfTyresOut", c_int),                                               # not used by ACC
         ("pitLimiterOn", c_int),
         ("abs", c_float),
-        ("kersCharge", c_float),                                                                    # not used by ACC
-        ("kersInput", c_float),                                                                     # not used by ACC
+        ("kersCharge", c_float),                                                   # not used by ACC
+        ("kersInput", c_float),                                                    # not used by ACC
         ("autoShifterOn", c_int),
-        ("rideHeight", c_float * 2),                                                                # not used by ACC
+        ("rideHeight", c_float * 2),                                               # not used by ACC
         ("turboBoost", c_float),
-        ("ballast", c_float),                                                                       # not used by ACC
-        ("airDensity", c_float),                                                                    # not used by ACC
+        ("ballast", c_float),                                                      # not used by ACC
+        ("airDensity", c_float),                                                   # not used by ACC
         ("airTemp", c_float),
         ("roadTemp", c_float),
         ("localAngularVel", c_float * 3),
         ("finalFF", c_float),
-        ("performanceMeter", c_float),                                                              # not used by ACC
-        ("engineBrake", c_int),                                                                     # not used by ACC
-        ("ersRecoveryLevel", c_int),                                                                # not used by ACC
-        ("ersPowerLevel", c_int),                                                                   # not used by ACC
-        ("ersHeatCharging", c_int),                                                                 # not used by ACC
-        ("ersIsCharging", c_int),                                                                   # not used by ACC
-        ("kersCurrentKJ", c_float),                                                                 # not used by ACC
-        ("drsAvailable", c_int),                                                                    # not used by ACC
-        ("drsEnabled", c_int),                                                                      # not used by ACC
+        ("performanceMeter", c_float),                                             # not used by ACC
+        ("engineBrake", c_int),                                                    # not used by ACC
+        ("ersRecoveryLevel", c_int),                                               # not used by ACC
+        ("ersPowerLevel", c_int),                                                  # not used by ACC
+        ("ersHeatCharging", c_int),                                                # not used by ACC
+        ("ersIsCharging", c_int),                                                  # not used by ACC
+        ("kersCurrentKJ", c_float),                                                # not used by ACC
+        ("drsAvailable", c_int),                                                   # not used by ACC
+        ("drsEnabled", c_int),                                                     # not used by ACC
         ("brakeTemp", c_float * 4),
         ("clutch", c_float),
-        ("tyreTempI", c_float * 4),                                                                 # not shown in ACC
-        ("tyreTempM", c_float * 4),                                                                 # not shown in ACC
-        ("tyreTempO", c_float * 4),                                                                 # not shown in ACC
+        ("tyreTempI", c_float * 4),                                               # not shown in ACC
+        ("tyreTempM", c_float * 4),                                               # not shown in ACC
+        ("tyreTempO", c_float * 4),                                               # not shown in ACC
         ("isAIControlled", c_int),
         ("tyreContactPoint", c_float * 4 * 3),
         ("tyreContactNormal", c_float * 4 * 3),
         ("tyreContactHeading", c_float * 4 * 3),
         ("brakeBias", c_float),
         ("localVelocity", c_float * 3),
-        ("P2PActivations", c_int),                                                                  # not used by ACC
-        ("P2PStatus", c_int),                                                                       # not used by ACC
-        ("currentMaxRpm", c_int),                                                                   # not used by ACC
-        ("mz", c_float * 4),                                                                        # not used by ACC
-        ("fx", c_float * 4),                                                                        # not used by ACC
-        ("fy", c_float * 4),                                                                        # not used by ACC
+        ("P2PActivations", c_int),                                                 # not used by ACC
+        ("P2PStatus", c_int),                                                      # not used by ACC
+        ("currentMaxRpm", c_int),                                                  # not used by ACC
+        ("mz", c_float * 4),                                                       # not used by ACC
+        ("fx", c_float * 4),                                                       # not used by ACC
+        ("fy", c_float * 4),                                                       # not used by ACC
         ("slipRatio", c_float * 4),
         ("slipAngle", c_float * 4),
-        ("tcinAction", c_int),                                                                      # not used by ACC
-        ("absInAction", c_int),                                                                     # not used by ACC
-        ("suspensionDamage", c_float * 4),                                                          # not used by ACC
-        ("tyreTemp", c_float * 4),                                                                  # not used by ACC
+        ("tcinAction", c_int),                                                     # not used by ACC
+        ("absInAction", c_int),                                                    # not used by ACC
+        ("suspensionDamage", c_float * 4),                                         # not used by ACC
+        ("tyreTemp", c_float * 4),                                                 # not used by ACC
         ("waterTemp", c_float),
         ("brakePressure", c_float * 4),
         ("frontBrakeCompound", c_int),
@@ -390,67 +390,67 @@ class SPageFilePhysics(Structure):
             "velocity": self.velocity,
             "accG": self.accG,
             "wheelSlip": self.wheelSlip,
-            "wheelLoad": self.wheelLoad,                                                            # not used by ACC
+            "wheelLoad": self.wheelLoad,                                           # not used by ACC
             "wheelPressure": self.wheelPressure,
             "wheelAngularSpeed": self.wheelAngularSpeed,
-            "tyreWear": self.tyreWear,                                                              # not used by ACC
-            "tyreDirtyLevel": self.tyreDirtyLevel,                                                  # not used by ACC
+            "tyreWear": self.tyreWear,                                             # not used by ACC
+            "tyreDirtyLevel": self.tyreDirtyLevel,                                 # not used by ACC
             "tyreCoreTemperature": self.tyreCoreTemperature,
-            "camberRAD": self.camberRAD,                                                            # not used by ACC
+            "camberRAD": self.camberRAD,                                           # not used by ACC
             "suspensionTravel": self.suspensionTravel,
-            "drs": self.drs,                                                                        # not used by ACC
+            "drs": self.drs,                                                       # not used by ACC
             "tc": self.tc,
             "heading": self.heading,
             "pitch": self.pitch,
             "roll": self.roll,
-            "cgHeight": self.cgHeight,                                                              # not used by ACC
+            "cgHeight": self.cgHeight,                                             # not used by ACC
             "carDamage": self.carDamage,
-            "numberOfTyresOut": self.numberOfTyresOut,                                              # not used by ACC
+            "numberOfTyresOut": self.numberOfTyresOut,                             # not used by ACC
             "pitLimiterOn": self.pitLimiterOn,
             "abs": self.abs,
-            "kersCharge": self.kersCharge,                                                          # not used by ACC
-            "kersInput": self.kersInput,                                                            # not used by ACC
+            "kersCharge": self.kersCharge,                                         # not used by ACC
+            "kersInput": self.kersInput,                                           # not used by ACC
             "autoShifterOn": self.autoShifterOn,
-            "rideHeight": self.rideHeight,                                                          # not used by ACC
+            "rideHeight": self.rideHeight,                                         # not used by ACC
             "turboBoost": self.turboBoost,
-            "ballast": self.ballast,                                                                # not used by ACC
-            "airDensity": self.airDensity,                                                          # not used by ACC
+            "ballast": self.ballast,                                               # not used by ACC
+            "airDensity": self.airDensity,                                         # not used by ACC
             "airTemp": self.airTemp,
             "roadTemp": self.roadTemp,
             "localAngularVel": self.localAngularVel,
             "finalFF": self.finalFF,
-            "performanceMeter": self.performanceMeter,                                              # not used by ACC
-            "engineBrake": self.engineBrake,                                                        # not used by ACC
-            "ersRecoveryLevel": self.ersRecoveryLevel,                                              # not used by ACC
-            "ersPowerLevel": self.ersPowerLevel,                                                    # not used by ACC
-            "ersHeatCharging": self.ersHeatCharging,                                                # not used by ACC
-            "ersIsCharging": self.ersIsCharging,                                                    # not used by ACC
-            "kersCurrentKJ": self.kersCurrentKJ,                                                    # not used by ACC
-            "drsAvailable": self.drsAvailable,                                                      # not used by ACC
-            "drsEnabled": self.drsEnabled,                                                          # not used by ACC
+            "performanceMeter": self.performanceMeter,                             # not used by ACC
+            "engineBrake": self.engineBrake,                                       # not used by ACC
+            "ersRecoveryLevel": self.ersRecoveryLevel,                             # not used by ACC
+            "ersPowerLevel": self.ersPowerLevel,                                   # not used by ACC
+            "ersHeatCharging": self.ersHeatCharging,                               # not used by ACC
+            "ersIsCharging": self.ersIsCharging,                                   # not used by ACC
+            "kersCurrentKJ": self.kersCurrentKJ,                                   # not used by ACC
+            "drsAvailable": self.drsAvailable,                                     # not used by ACC
+            "drsEnabled": self.drsEnabled,                                         # not used by ACC
             "brakeTemp": self.brakeTemp,
             "clutch": self.clutch,
-            "tyreTempI": self.tyreTempI,                                                            # not shown by ACC
-            "tyreTempM": self.tyreTempM,                                                            # not shown by ACC
-            "tyreTempO": self.tyreTempO,                                                            # not shown by ACC
+            "tyreTempI": self.tyreTempI,                                          # not shown by ACC
+            "tyreTempM": self.tyreTempM,                                          # not shown by ACC
+            "tyreTempO": self.tyreTempO,                                          # not shown by ACC
             "isAIControlled": self.isAIControlled,
             "tyreContactPoint": self.tyreContactPoint,
             "tyreContactNormal": self.tyreContactNormal,
             "tyreContactHeading": self.tyreContactHeading,
             "brakeBias": self.brakeBias,
             "localVelocity": self.localVelocity,
-            "P2PActivations": self.P2PActivations,                                                  # not used by ACC
-            "P2PStatus": self.P2PStatus,                                                            # not used by ACC
-            "currentMaxRpm": self.currentMaxRpm,                                                    # not used by ACC
-            "mz": self.mz,                                                                          # not used by ACC
-            "fx": self.fx,                                                                          # not used by ACC
-            "fy": self.fy,                                                                          # not used by ACC
+            "P2PActivations": self.P2PActivations,                                 # not used by ACC
+            "P2PStatus": self.P2PStatus,                                           # not used by ACC
+            "currentMaxRpm": self.currentMaxRpm,                                   # not used by ACC
+            "mz": self.mz,                                                         # not used by ACC
+            "fx": self.fx,                                                         # not used by ACC
+            "fy": self.fy,                                                         # not used by ACC
             "slipRatio": self.slipRatio,
             "slipAngle": self.slipAngle,
-            "tcinAction": self.tcinAction,                                                          # not used by ACC
-            "absInAction": self.absInAction,                                                        # not used by ACC
-            "suspensionDamage": self.suspensionDamage,                                              # not used by ACC
-            "tyreTemp": self.tyreTemp,                                                              # not used by ACC
+            "tcinAction": self.tcinAction,                                         # not used by ACC
+            "absInAction": self.absInAction,                                       # not used by ACC
+            "suspensionDamage": self.suspensionDamage,                             # not used by ACC
+            "tyreTemp": self.tyreTemp,                                             # not used by ACC
             "waterTemp": self.waterTemp,
             "brakePressure": self.brakePressure,
             "frontBrakeCompound": self.frontBrakeCompound,
@@ -468,18 +468,18 @@ class SPageFilePhysics(Structure):
 
 
 def read_physics():
-    buf = mmap.mmap(-1, sizeof(SPageFilePhysics), u"Local\\acpmf_physics")
+    buf = mmap.mmap(-1, sizeof(SPageFilePhysics), "Local\\acpmf_physics")
     data = SPageFilePhysics.from_buffer(buf)
     return data.todict()
 
 
 def read_static():
-    buf = mmap.mmap(-1, sizeof(SPageFileStatic), u"Local\\acpmf_static")
+    buf = mmap.mmap(-1, sizeof(SPageFileStatic), "Local\\acpmf_static")
     data = SPageFileStatic.from_buffer(buf)
     return data.todict()
 
 
 def read_graphics():
-    buf = mmap.mmap(-1, sizeof(SPageFileGraphic), u"Local\\acpmf_graphics")
+    buf = mmap.mmap(-1, sizeof(SPageFileGraphic), "Local\\acpmf_graphics")
     data = SPageFileGraphic.from_buffer(buf)
     return data.todict()

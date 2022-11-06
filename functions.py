@@ -1,4 +1,3 @@
-import datetime
 import time
 import pandas as pd
 
@@ -6,10 +5,10 @@ import pandas as pd
 def lap_time_converter(milliseconds):
     if milliseconds == 2147483647:
         return "NULL"
+    elif milliseconds == -1.0:
+        return "NULL"
     else:
-        secs = milliseconds / 1000
-        output_time = datetime.timedelta(seconds=secs)
-        return output_time
+        return milliseconds
 
 
 def create_csv(input_df):
