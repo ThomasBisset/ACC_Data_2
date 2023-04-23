@@ -154,15 +154,17 @@ def car_model(enum):
         "lamborghini_huracan_st_evo2": "Lamborghini Huracàn ST Evo2 2021",
         "porsche_992_gt3_cup": "Porsche 992 GT3 Cup 2021",
         # 2023 GT World Challenge Pack
-        # Ferrari 296 GT3
-        # Lamborghini Huracàn EVO2
-        # Porsche 911 (992) GT3 R
+        "ferrari_296_gt3": "Ferrari 296 GT3",
+        "lamborghini_huracan_gt3_evo2": "Lamborghini Huracàn EVO2",
+        "porsche_992_gt3_r": "Porsche 911 (992) GT3 R"
     }
     return car[enum]
 
 
 def track_name(enum):
     track = {
+        # [0] Simple name
+        # [1] Full track name
         # Base Tracks
         "barcelona": ["Barcelona", "Circuit de Barcelona-Catalunya"],
         "brands_hatch": ["Brands Hatch", "Brands Hatch"],
@@ -191,7 +193,7 @@ def track_name(enum):
         "indianapolis": ["Indianapolis", "Indianapolis Motor Speedway"],
         "watkins_glen": ["Watkins Glen", "Watkins Glen International"],
         # 2023 GT World Challenge Pack
-        # "valencia": ["Valencia", "Circuit Ricardo Tormo"],
+        "valencia": ["Valencia", "Circuit Ricardo Tormo"],
     }
     return track[enum]
 
