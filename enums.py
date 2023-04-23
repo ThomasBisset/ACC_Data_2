@@ -114,8 +114,8 @@ def car_model(enum):
         "ferrari_488_gt3": "Ferrari 488 GT3 2018",
         "honda_nsx_gt3": "Honda NSX GT3 2017",
         "lamborghini_gallardo_rex": "Lamborghini Gallardo G3 Reiter 2017",
-        "lamborghini_huracan_gt3": "Lamborghini Huracan GT3 2015",
-        "lamborghini_huracan_st": "Lamborghini Huracan ST 2015",
+        "lamborghini_huracan_gt3": "Lamborghini Huracàn GT3 2015",
+        "lamborghini_huracan_st": "Lamborghini Huracàn ST 2015",
         "lexus_rc_f_gt3": "Lexus RCF GT3 2016",
         "mclaren_650s_gt3": "McLaren 650S GT3 2015",
         "mercedes_amg_gt3": "Mercedes AMG GT3 2015",
@@ -127,7 +127,7 @@ def car_model(enum):
         "amr_v8_vantage_gt3": "Aston Martin V8 Vantage GT3 2019",
         "audi_r8_lms_evo": "Audi R8 LMS Evo 2019",
         "honda_nsx_gt3_evo": "Honda NSX GT3 Evo 2019",
-        "lamborghini_huracan_gt3_evo": "Lamborghini Huracan GT3 EVO 2019",
+        "lamborghini_huracan_gt3_evo": "Lamborghini Huracàn GT3 EVO 2019",
         "mclaren_720s_gt3": "McLaren 720S GT3 2019",
         "porsche_991ii_gt3_r": "Porsche 911 II GT3 R 2019",
         # GT4
@@ -137,7 +137,7 @@ def car_model(enum):
         "bmw_m4_gt4": "BMW M4 GT42 018",
         "chevrolet_camaro_gt4r": "Chevrolet Camaro GT4 R 2017",
         "ginetta_g55_gt4": "Ginetta G55 GT4 2012",
-        "ktm_xbow_gt4": "Ktm Xbow GT4 2016",
+        "ktm_xbow_gt4": "KTM Xbow GT4 2016",
         "maserati_mc_gt4": "Maserati Gran Turismo MC GT4 2016",
         "mclaren_570s_gt4": "McLaren 570s GT4 2016",
         "mercedes_amg_gt4": "Mercedes AMG GT4 2016",
@@ -147,40 +147,51 @@ def car_model(enum):
         "mercedes_amg_gt3_evo": "Mercedes AMG GT3 Evo 2020",
         # GT3 - 2021
         "bmw_m4_gt3": "BMW M4 vGT3 2021",
-        # Challengers Pack - 2022
+        # Challengers Pack
         "audi_r8_lms_evo_ii": "Audi R8 LMS Evo II 2022",
         "bmw_m2_cs_racing": "BMW M2 Cup 2020",
         "ferrari_488_challenge_evo": "Ferrari 488 Challenge Evo 2020",
-        "lamborghini_huracan_st_evo2": "Lamborghini Huracan ST Evo2 2021",
+        "lamborghini_huracan_st_evo2": "Lamborghini Huracàn ST Evo2 2021",
         "porsche_992_gt3_cup": "Porsche 992 GT3 Cup 2021",
+        # 2023 GT World Challenge Pack
+        # Ferrari 296 GT3
+        # Lamborghini Huracàn EVO2
+        # Porsche 911 (992) GT3 R
     }
     return car[enum]
 
 
 def track_name(enum):
     track = {
-        "barcelona": "Barcelona",
-        "brands_hatch": "Brands Hatch",
-        "hungaroring": "Hungaroring",
-        "kyalami": "Kyalami",
-        "laguna_seca": "Laguna Seca",
-        "misano": "Misano",
-        "monza": "Monza",
-        "mount_panorama": "Mount Panorama",
-        "nurburgring": "Nürburgring",
-        "paul_ricard": "Paul Ricard",
-        "silverstone": "Silverstone",
-        "spa": "Spa-Francorchamps",
-        "suzuka": "Suzuka",
-        "zolder": "Zolder",
-        "zandvoort": "Zandvoort",
-        "imola": "Imola",
-        "oulton_park": "Oulton Park",
-        "donnington": "Donnington",
-        "snetterton": "Snetterton",
-        "cota": "Circuit of the Americas",
-        "indianapolis": "Indianapolis",
-        "watkins_glen": "Watkins Glen",
+        # Base Tracks
+        "barcelona": ["Barcelona", "Circuit de Barcelona-Catalunya"],
+        "brands_hatch": ["Brands Hatch", "Brands Hatch"],
+        "hungaroring": ["Hungaroring", "Hungaroring"],
+        "misano": ["Misano", "Misano World Circuit Marco Simoncelli"],
+        "monza": ["Monza", "Autodromo Nazionale di Monza"],
+        "nurburgring": ["Nürburgring", "Nürburgring Grand Prix Track"],
+        "paul_ricard": ["Paul Ricard", "Circuit Paul Ricard"],
+        "silverstone": ["Silverstone", "Silverstone"],
+        "spa": ["Spa-Francorchamps", "Circuit de Spa-Francorchamps"],
+        "zolder": ["Zolder", "Zolder"],
+        "zandvoort": ["Zandvoort", "Zandvoort"],
+        # Intercontinental GT Pack
+        "kyalami": ["Kyalami", "Kyalami"],
+        "laguna_seca": ["Laguna Seca", "WeatherTech Raceway Laguna Seca"],
+        "mount_panorama": ["Mount Panorama", "Mount Panorama Motor Racing Circuit"],
+        "suzuka": ["Suzuka", "Suzuka"],
+        # 2020 GT World Challenge Pack
+        "imola": ["Imola", "Autodromo Internazionale Enzo e Dino Ferrari"],
+        # British GT Pack
+        "donnington": ["Donnington", "Donnington Park"],
+        "oulton_park": ["Oulton Park", "Oulton Park"],
+        "snetterton": ["Snetterton", "Snetterton"],
+        # American Track Pack
+        "cota": ["Circuit of the Americas", "Circuit of the Americas"],
+        "indianapolis": ["Indianapolis", "Indianapolis Motor Speedway"],
+        "watkins_glen": ["Watkins Glen", "Watkins Glen International"],
+        # 2023 GT World Challenge Pack
+        # "valencia": ["Valencia", "Circuit Ricardo Tormo"],
     }
     return track[enum]
 
