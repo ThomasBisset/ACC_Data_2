@@ -1,6 +1,8 @@
+# This is a script for testing purposes - simply outputs to screen
+
 from time import sleep
 from functions import create_csv
-from data_collection import data_collection
+from read_shared_memory import read_physics
 
 
 if __name__ == '__main__':
@@ -9,8 +11,9 @@ if __name__ == '__main__':
     try:
         print("Started, press Ctrl+C to stop execution")
         while True:
-            print(data_collection()["Track"])
-            print(data_collection()["Car"])
+            print(read_physics()["tyreTempI"][0])
+            print(read_physics()["tyreTempM"][0])
+            print(read_physics()["tyreTempO"][0])
             sleep(1 / polling_rate)
     except KeyboardInterrupt:
         print("Stopping")

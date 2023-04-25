@@ -1,4 +1,4 @@
-main.pyfrom time import sleep
+from time import sleep
 from functions import create_csv
 from data_collection import data_collection
 
